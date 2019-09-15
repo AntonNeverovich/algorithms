@@ -11,15 +11,15 @@ print 'input values: a = {0}, n = {1}'.format(a, n)
 
 
 # exponentiation' algorithm
-def exp1(a, n):
-    b = 1  # such that b = a ** n
-    for i in range(n):
-        b *= a
+def exp1(basis, exp):
+    b = 1  # such that b = basis ** exp
+    for i in range(exp):
+        b *= basis
     return b
 
 
-def check(a, n , r):
-    return r == a ** n
+def check(b, k, r):
+    return r == b ** k
 
 
 print 'a ** n = {0}: {1}'.format(exp1(a, n), check(a, n, exp1(a, n)))
