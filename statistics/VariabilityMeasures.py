@@ -1,10 +1,10 @@
-from statistics import Central_tendency_measures as ctm
+from statistics import CentralTendencyMeasures as ctm
 
 
 # find standard deviation
 def sd(nums: []):
     var = 0
-    mx_ = ctm.mx(nums)
+    mx_ = ctm.mean(nums)
     for x in nums:
         var += (x - mx_) ** 2
     return (var / (len(nums) - 1)) ** 0.5
@@ -13,7 +13,7 @@ def sd(nums: []):
 # find variance
 def variance(nums: []):
     var = 0
-    mx_ = ctm.mx(nums)
+    mx_ = ctm.mean(nums)
     for x in nums:
         var += (x - mx_) ** 2
     return var / (len(nums) - 1)

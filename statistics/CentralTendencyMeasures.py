@@ -17,7 +17,7 @@ def median(nums: []):
 
 
 # find average
-def mx(nums: []):
+def mean(nums: []):
     sum = 0
     for x in nums:
         sum += x
