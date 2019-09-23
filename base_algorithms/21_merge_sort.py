@@ -50,7 +50,7 @@ def merge_sort(a):
 
 # algorithm implementation
 res = merge_sort(data)
-print res
+print(res)
 
 
 # preparation data to output

@@ -7,10 +7,17 @@ input_file.close()
 # preparation data: parsing numbers
 lines_length = int(lines[0])
 data = lines[1].split(' ')
+indexes = range(len(data))
 origin_data = []
+
+
 for i in range(len(data)):
     data[i] = float(data[i])
     origin_data.append(data[i])
+
+
+val = dict(zip(indexes, data))
+print(val)
 
 
 # realise algorithm
@@ -27,11 +34,11 @@ def insertion_sort(array):
 
 # algorithm implementation
 data = insertion_sort(data)
-
+print(val)
 
 # calculating min, max, average values
 min_val = data[0]
-average_val = data[len(data) / 2]
+average_val = data[len(data) // 2]
 max_val = data[len(data) - 1]
 
 
