@@ -48,3 +48,22 @@ def alfa():
 
 def f(z: float) -> float:
     return m.e ** (-1 * ((z ** 2) / 2))
+
+
+def se(sdx: float, D: float, n: int):
+    if n > 30:
+        return sdx / (n ** 0.5)
+    return (D / n) ** 0.5
+
+
+def confidence_interval(x_mean: float, sd: float, n: int, accuracy=0.95) -> []:
+    res = []
+    se_ = se(sdx=sd, n=n, D=sd**0.5)
+    ci = 0
+    if accuracy == 0.95:
+        ci = 1.96 * se_
+    if accuracy == 0.99:
+        ci = 2.58 * se_
+    res.append(x_mean - ci)
+    res.append(x_mean + ci)
+    return res
