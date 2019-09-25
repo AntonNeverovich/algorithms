@@ -1,4 +1,4 @@
-from statistics import CentralTendencyMeasures as ctm
+from statistics_ import CentralTendencyMeasures as ctm
 
 
 # find standard deviation

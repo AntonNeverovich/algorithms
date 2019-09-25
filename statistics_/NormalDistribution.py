@@ -1,4 +1,5 @@
 import math as m
+import statistics as stats
 
 
 def z_value(x: float, mx: float, sd: float):
@@ -67,3 +68,16 @@ def confidence_interval(x_mean: float, sd: float, n: int, accuracy=0.95) -> []:
     res.append(x_mean - ci)
     res.append(x_mean + ci)
     return res
+
+
+def p_significance(x: float, sd: float, median: float, alternative='two-sided'):
+    if alternative == 'two-sided':
+        return 2 * (1 - gauss_distribution(x, sd, median))
+    if alternative == 'less':
+        return gauss_distribution(x, sd, median)
+    if alternative == 'greater':
+        return 1 - gauss_distribution(x, sd, median)
+
+
+def gauss_distribution(x: float, sd: float, median: float):
+    return (alfa() * (1 / sd)) * (m.e ** (- 1 * ((x - median) ** 2) / (2 * (sd ** 2))))
